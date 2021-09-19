@@ -1,0 +1,222 @@
+/* @imports */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap");
+/* Normalize */
+@import url("normalize.css");
+h1 {
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  color: white;
+}
+h1 span {
+  color: #aa5cdb;
+}
+
+h2 {
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  color: white;
+}
+h2 span {
+  color: #aa5cdb;
+}
+
+h3 {
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  color: white;
+}
+h3 span {
+  color: #aa5cdb;
+}
+
+h4 {
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  color: white;
+}
+h4 span {
+  color: #aa5cdb;
+}
+
+h5 {
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  color: white;
+}
+h5 span {
+  color: #aa5cdb;
+}
+
+h6 {
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  color: white;
+}
+h6 span {
+  color: #aa5cdb;
+}
+
+p {
+  font-family: "Lexend Deca", sans-serif;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+span {
+  font-family: "Inter", sans-serif;
+}
+
+/* Global */
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+/* Body */
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  min-height: 100vh;
+  background-color: #090b1a;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: "Lexend Deca", sans-serif;
+}
+
+.card {
+  width: 75%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  background-color: #1b1938;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+@media (max-width: 375px) {
+  .card {
+    width: 90%;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 3fr;
+  }
+}
+.card__info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 55px 105px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+@media (max-width: 375px) {
+  .card__info {
+    padding: 25px;
+    text-align: center;
+    grid-row: 2/3;
+    margin: 0;
+  }
+}
+.card__title {
+  font-size: 48px;
+  margin-bottom: 50px;
+}
+@media (max-width: 375px) {
+  .card__title {
+    font-size: 31px;
+    margin-bottom: 25px;
+    margin-top: 30px;
+  }
+}
+.card__description {
+  font-size: 19px;
+  line-height: 42px;
+  margin-bottom: 100px;
+}
+@media (max-width: 375px) {
+  .card__description {
+    font-size: 16px;
+    line-height: 33px;
+    margin-bottom: 50px;
+  }
+}
+.card__status {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  text-transform: uppercase;
+}
+@media (max-width: 375px) {
+  .card__status {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+@media (max-width: 375px) {
+  .card__status__item {
+    margin-bottom: 40px;
+  }
+  .card__status__item:last-child {
+    margin-bottom: 0;
+  }
+}
+.card__status__item-count {
+  display: block;
+  font-size: 25px;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 10px;
+}
+.card__status__item-title {
+  font-weight: 400;
+  letter-spacing: 2px;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 13px;
+}
+.card__image {
+  background-image: url("../images/image-header-desktop.jpg");
+  background-size: cover;
+  position: relative;
+}
+.card__image::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: #5b1c82;
+  opacity: 0.65;
+}
+@media (max-width: 375px) {
+  .card__image {
+    background-image: url("../images/image-header-mobile.jpg");
+  }
+}
+
+/* Attribution Style */
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution__link {
+  color: #3e52a3;
+}

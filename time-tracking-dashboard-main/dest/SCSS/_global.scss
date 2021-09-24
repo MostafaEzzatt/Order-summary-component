@@ -1,0 +1,102 @@
+@use "./vars" as *;
+@use "./mixins" as *;
+
+/* Global Styles */
+
+html {
+  font-size: 100%;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  font-family: "Rubik", sans-serif;
+  background-color: $very-dark-blue;
+}
+
+/* Typography */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  line-height: 1;
+  margin: 0;
+  padding: 0;
+}
+
+/* Helpers */
+
+.img {
+  width: 4.44rem;
+  max-width: 100%;
+  border: 0.27rem solid $white;
+  border-radius: 50%;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-dir {
+  flex-direction: column;
+  @include breakpoint-up("xlarge") {
+    flex-direction: row;
+  }
+}
+
+.f-ai-center {
+  align-items: center;
+}
+
+.f-jc-center {
+  justify-content: center;
+}
+
+.f-jc-between {
+  justify-content: space-between;
+}
+
+.f-jc-around {
+  justify-content: space-around;
+}
+
+.btn {
+  border: 0;
+  background-color: transparent;
+  color: $desaturated-blue;
+  transition: color 300ms ease-in-out;
+  cursor: pointer;
+
+  &:hover {
+    color: $white;
+  }
+
+  &.active {
+    color: $white;
+  }
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 4fr;
+  justify-items: center;
+  @include breakpoint-up("xlarge") {
+    grid-template-columns: auto auto;
+    grid-template-rows: 1fr;
+    align-items: center;
+    gap: 1.875rem;
+  }
+}

@@ -1,0 +1,22 @@
+@use "./variables" as *;
+
+// Typography
+@for $i from 1 through 6 {
+    h#{$i}{
+        font-family: $heading-font-family;
+        font-weight: 700;
+        color: $white;
+        span{
+            color: $soft-violet;
+        }
+    }
+}
+
+p{
+    font-family: $base-font-family;
+    color: $white75;
+}
+
+span{
+    font-family: $heading-font-family;
+}

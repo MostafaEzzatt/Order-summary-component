@@ -1,0 +1,253 @@
+// @use
+@use "./vars" as *;
+@use "./mixins" as *;
+@use "./global" as *;
+
+// @imports
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap");
+
+/* menu */
+
+.menu {
+  width: 20.5rem;
+  background-color: $dark-blue;
+  border-radius: 0.83rem;
+  color: $white;
+  font-weight: 300;
+  overflow: hidden;
+  margin-top: 4.44rem;
+  margin-bottom: 3.875rem;
+
+  justify-self: self-end;
+
+  @include breakpoint-up("xlarge") {
+    width: 15.9375rem;
+    height: 100%;
+    flex-direction: column;
+    margin-top: 0rem;
+    margin-bottom: 0rem;
+  }
+
+  &__info {
+    flex: 0 1 auto;
+    flex-direction: row;
+    background-color: $blue;
+    padding: 1.875rem 2.5rem;
+    border-radius: 0.83rem;
+
+    @include breakpoint-up("xlarge") {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    &__image {
+      margin-right: 1rem;
+      @include breakpoint-up("xlarge") {
+        margin-bottom: 2.625rem;
+      }
+    }
+
+    &__data {
+      &__span {
+        display: block;
+        font-size: 0.66rem;
+        color: $soft-blue;
+        margin-bottom: 0.55rem;
+        @include breakpoint-up("xlarge") {
+          font-size: 0.86rem;
+          margin-bottom: 0.8125rem;
+        }
+      }
+      &__title {
+        font-weight: 300;
+        font-size: 1.22rem;
+        @include breakpoint-up("xlarge") {
+          font-size: 2.275rem;
+          line-height: 2.625rem;
+          margin-bottom: 3.584rem;
+        }
+      }
+    }
+  }
+
+  &__list {
+    @include breakpoint-up("xlarge") {
+      flex: 1 1 auto;
+      padding: 2rem;
+    }
+    &__container {
+      list-style: none;
+
+      @include breakpoint-up("xlarge") {
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+      }
+      &__item {
+        margin-top: 1.66rem;
+        margin-bottom: 1.66rem;
+
+        @include breakpoint-up("xlarge") {
+          width: 100%;
+          margin-top: 0rem;
+          margin-bottom: 0rem;
+        }
+      }
+    }
+  }
+}
+
+/* main */
+
+.main {
+  @include breakpoint-up("xlarge") {
+    justify-self: self-start;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 1.875rem;
+    grid-row-gap: 4.6875rem;
+    padding-top: 2.375rem;
+  }
+
+  &__item {
+    width: 20.5rem;
+    color: $white;
+    background: $dark-blue;
+    padding-top: 1.875rem;
+    padding-bottom: 1.875rem;
+    border-radius: 0.83rem;
+    margin-bottom: 3.875rem;
+    position: relative;
+
+    @include breakpoint-up("xlarge") {
+      width: 15.9375rem;
+      margin-bottom: 0rem;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: -2.375rem;
+      left: 0;
+      border-radius: 0.83rem;
+      z-index: -1;
+
+      @include breakpoint-up("xlarge") {
+        top: -2.8125rem;
+      }
+    }
+
+    &.work {
+      &::before {
+        background-color: $lighter-red;
+        background-image: url(../images/icon-work.svg);
+        background-repeat: no-repeat;
+        background-position: right -0.6875rem;
+      }
+    }
+
+    &.play {
+      &::before {
+        background-color: $soft-blue;
+        background-image: url(../images/icon-play.svg);
+        background-repeat: no-repeat;
+        background-position: right -0.6875rem;
+      }
+    }
+
+    &.study {
+      &::before {
+        background-color: $light-red;
+        background-image: url(../images/icon-study.svg);
+        background-repeat: no-repeat;
+        background-position: right -0.6875rem;
+      }
+    }
+
+    &.exercise {
+      &::before {
+        background-color: $lime-green;
+        background-image: url(../images/icon-exercise.svg);
+        background-repeat: no-repeat;
+        background-position: right -0.6875rem;
+      }
+    }
+
+    &.social {
+      &::before {
+        background-color: $violet;
+        background-image: url(../images/icon-social.svg);
+        background-repeat: no-repeat;
+        background-position: right -0.6875rem;
+      }
+    }
+
+    &.self-care {
+      &::before {
+        background-color: $soft-orange;
+        background-image: url(../images/icon-self-care.svg);
+        background-repeat: no-repeat;
+        background-position: right -0.6875rem;
+      }
+    }
+
+    &__heading,
+    &__info {
+      margin-right: 2.01rem;
+      margin-left: 2.01rem;
+      @include breakpoint-up("xlarge") {
+        margin-right: 1.875rem;
+        margin-left: 1.875rem;
+      }
+    }
+
+    &__heading {
+      margin-bottom: 1.125rem;
+
+      @include breakpoint-up("xlarge") {
+        margin-bottom: 2.5rem;
+      }
+
+      &__title {
+        font-size: 1.125rem;
+        font-weight: 400;
+      }
+
+      &__menu {
+        cursor: pointer;
+        &__circle {
+          display: inline-block;
+          width: 0.3125rem;
+          height: 0.3125rem;
+          margin-right: 0.15625rem;
+          border-radius: 50%;
+          background-color: $white;
+        }
+      }
+    }
+
+    &__info {
+      @include breakpoint-up("xlarge") {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      &__current {
+        font-size: 2.77rem;
+        font-weight: 300;
+        @include breakpoint-up("xlarge") {
+          font-size: 3.67rem;
+        }
+      }
+      &__last__week {
+        font-size: 0.6875rem;
+        color: $soft-blue;
+        @include breakpoint-up("xlarge") {
+          font-size: 0.9875rem;
+        }
+      }
+    }
+  }
+}

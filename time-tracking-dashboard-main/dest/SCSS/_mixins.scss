@@ -1,0 +1,15 @@
+@use "./vars";
+
+$breakpoints-up: (
+  "medium": "40em",
+  "large": "64em",
+  "xlarge": "71.25em",
+  // you can uncomment the next one if you want it to break on 1440px
+  //   "xlarge": "90em",,
+);
+
+@mixin breakpoint-up($size) {
+  @media (min-width: map-get($breakpoints-up, $size)) {
+    @content;
+  }
+}

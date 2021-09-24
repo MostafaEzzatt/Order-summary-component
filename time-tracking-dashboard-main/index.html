@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./dest/images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Time tracking dashboard</title>
+
+  <link rel="stylesheet" href="./dest/css/normalize.css">
+  <link rel="stylesheet" href="./dest/css/index.css">
+
+</head>
+<!-- flex flex-dir f-ai-center f-jc-center -->
+<body class='flex f-ai-center f-jc-center'>
+
+  <div class="container">
+
+  <aside class="menu flex flex-dir f-jc-center">
+    <div class="menu__info flex f-ai-center ">
+      <div class="menu__info__image">
+        <img class="img" src="./dest/images/image-jeremy.png" alt="Jeremy Robson">
+      </div>
+
+      <div class="menu__info__data">
+        <span class="menu__info__data__span">Report for</span>
+        <h1 class='menu__info__data__title'>Jeremy Robson</h1>
+      </div>
+    </div>
+    <div class="menu__list">
+      <ul class="menu__list__container flex f-jc-around">
+        <li class="menu__list__container__item">
+          <button id="daily" class="btn active">Daily</button>
+        </li>
+        <li class="menu__list__container__item">
+          <button id="weekly" class="btn">Weekly</button>
+        </li>
+        <li class="menu__list__container__item">
+          <button id="monthly" class="btn">Monthly</button>
+        </li>
+      </ul>
+    </div>
+  </aside>
+
+  <main class="main"></main>
+
+  </div>
+  
+  <!-- <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </div> -->
+
+  <script src="dest/js/main.js"></script>
+</body>
+</html>

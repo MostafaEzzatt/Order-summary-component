@@ -1,0 +1,44 @@
+@use "./vars" as *;
+html {
+  font-size: 100%;
+}
+
+*,
+*::after,
+*::before {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--very-dark-blue);
+  color: var(--white);
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 30.5%;
+    background-color: var(--very-dark-blue-top);
+    border-bottom-right-radius: 2rem;
+    border-bottom-left-radius: 2rem;
+    z-index: -1;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span {
+  font-family: "Inter", sans-serif;
+}

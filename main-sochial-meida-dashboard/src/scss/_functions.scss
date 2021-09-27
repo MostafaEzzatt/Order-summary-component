@@ -1,0 +1,10 @@
+@use "./vars" as *;
+@function size($size, $status: false) {
+  $remSize: calc($size / $base-size);
+
+  @if $status == true {
+    @return (-#{$remSize}rem);
+  } @else {
+    @return #{$remSize}rem;
+  }
+}

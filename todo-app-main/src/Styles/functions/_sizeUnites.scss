@@ -1,0 +1,21 @@
+@use "../Variables//typography" as *;
+
+@function rem($size, $status: false) {
+  $remSize: calc($size / $baseFontSize);
+
+  @if $status == true {
+    @return (-#{$remSize}rem);
+  } @else {
+    @return #{$remSize}rem;
+  }
+}
+
+@function em($size, $status: false) {
+  $emSize: calc($size / $baseFontSize);
+
+  @if $status == true {
+    @return (-#{$emSize}em);
+  } @else {
+    @return #{$emSize}em;
+  }
+}

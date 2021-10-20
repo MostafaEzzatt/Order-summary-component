@@ -1,0 +1,72 @@
+@use "./variables/colors" as color;
+@use "./functions/sizeUnite" as *;
+@use "./mixins/breakpoints" as *;
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  background: color.$bg;
+  font-family: "Rubik", sans-serif;
+  padding-top: rem(150);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+
+  @include breakpoint-up("large") {
+    padding: 0;
+    justify-content: center;
+  }
+
+  @include breakpoint-up("x-large") {
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  &::after {
+    @include breakpoint-up("x-large") {
+      content: "";
+      width: rem(500);
+      height: 80%;
+      position: absolute;
+      right: -10%;
+      bottom: 0;
+      border-top-left-radius: rem(300);
+      border-top-right-radius: rem(300);
+      background-color: hsl(270, 20%, 96%);
+      z-index: -1000;
+    }
+  }
+
+  &::before {
+    content: "";
+    width: 50%;
+    max-width: rem(220);
+    height: rem(500);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1000;
+    border-bottom-right-radius: rem(300);
+    background-color: hsl(264, 100%, 61%);
+    @include breakpoint-up("medium") {
+      width: 55%;
+      max-width: rem(500);
+      height: 80%;
+      border-bottom-left-radius: rem(300);
+      left: -10%;
+    }
+  }
+}
+
+img {
+  max-width: 100%;
+}

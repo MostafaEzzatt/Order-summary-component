@@ -1,0 +1,13 @@
+@use "../mixins/breakpoints" as *;
+@use "../functions/sizeUnite" as *;
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @include breakpoint-up("large") {
+    flex-direction: row;
+    max-width: rem(850);
+  }
+}

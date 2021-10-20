@@ -1,0 +1,203 @@
+@use "../functions/sizeUnite" as *;
+@use "../variables/colors" as color;
+
+.phone {
+  width: rem(247);
+  min-width: rem(247);
+  height: rem(505);
+  background-color: white;
+  border-radius: rem(30);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 18px 16px hsl(0deg 0% 0% / 20%);
+
+  &__inner {
+    width: rem(227);
+    height: rem(484);
+    background: #f5f3f8;
+    border-radius: rem(20);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__header {
+    width: 100%;
+    height: 66px;
+    background: hsl(264, 100%, 61%);
+    border-radius: rem(6);
+    position: relative;
+    &__unites {
+      position: absolute;
+      bottom: rem(14);
+      width: 100%;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      gap: rem(8);
+      padding-left: rem(15);
+      padding-right: rem(15);
+      .back {
+        color: white;
+      }
+      img {
+        width: rem(22);
+        height: rem(22);
+        border: rem(2) solid white;
+        border-radius: 50%;
+      }
+      .info {
+        font-size: rem(8);
+        flex: 1 0 auto;
+        h3 {
+          color: white;
+        }
+
+        p {
+          color: hsl(276, 100%, 81%);
+        }
+      }
+      .links {
+        span {
+          width: rem(4);
+          height: rem(4);
+          display: block;
+          margin-bottom: 1px;
+          border-radius: 50%;
+          background-color: white;
+        }
+      }
+    }
+  }
+
+  &__bazel {
+    width: rem(129);
+    height: rem(18);
+    background-color: white;
+    border-radius: 0 0 rem(14) rem(14);
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+  }
+
+  &__chat {
+    width: 100%;
+    font-size: rem(8);
+    flex: 1 0 auto;
+    display: flex;
+    flex-direction: column;
+    &__user {
+      margin-top: rem(8);
+    }
+
+    &__unite {
+      padding: 0.8em;
+      line-height: 1.2;
+    }
+
+    &__paragraph {
+      max-width: rem(128);
+      &-left {
+        margin-left: rem(8);
+        background-color: #ede5f4;
+        color: hsl(276, 55%, 52%);
+        border-radius: rem(4) rem(4) rem(4) rem(2);
+      }
+      &-right {
+        margin-right: rem(8);
+        border-radius: rem(4) rem(4) rem(2) rem(4);
+        background-color: white;
+        color: hsl(271, 15%, 43%);
+        align-self: flex-end;
+      }
+    }
+
+    &__photos {
+      &-right {
+        width: rem(153);
+        align-self: flex-end;
+        padding-bottom: 0;
+        padding-left: 0;
+        .item {
+          width: rem(40);
+          height: rem(40);
+          display: inline-block;
+          &:not(:last-child) {
+            margin-right: rem(8);
+          }
+
+          img {
+            border-radius: rem(8);
+          }
+        }
+      }
+    }
+
+    &__offer {
+      width: rem(160);
+      border-radius: rem(4) rem(4) rem(4) rem(2);
+      margin-left: rem(8);
+      margin-top: rem(8);
+      padding: 1.1em 1em 1.1em 3.5em;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: linear-gradient(
+        to right,
+        hsl(293, 100%, 63%),
+        hsl(264, 100%, 61%)
+      );
+      color: hsl(270, 20%, 96%);
+
+      position: relative;
+
+      &::before {
+        content: "";
+        width: rem(12);
+        height: rem(12);
+        border-radius: 50%;
+        position: absolute;
+        top: 50%;
+        left: 1rem;
+        border: 2px solid hsl(289, 100%, 72%);
+        transform: translate(-50%, -50%);
+      }
+
+      .price {
+        font-size: rem(12);
+        font-weight: bold;
+      }
+    }
+
+    &__input {
+      font-size: rem(8);
+      margin-right: rem(8);
+      margin-left: rem(8);
+      margin-bottom: rem(10);
+      border-radius: rem(15);
+      overflow: hidden;
+      background-color: white;
+      position: relative;
+      &__text {
+        width: 100%;
+        border: 0;
+        padding: rem(10) rem(30) rem(10) rem(12);
+        outline: none;
+      }
+      &__button {
+        width: rem(25);
+        height: rem(25);
+        position: absolute;
+        top: 50%;
+        right: rem(5);
+        background-color: hsl(271, 36%, 24%);
+        border: 0;
+        border-radius: 50%;
+        transform: translateY(-50%);
+        color: white;
+      }
+    }
+  }
+}

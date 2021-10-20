@@ -1,0 +1,18 @@
+@use "../variables/breakpoints" as *;
+@use "../functions/sizeUnite" as *;
+
+$mediumRem: rem($medium);
+$largeRem: rem($large);
+$xLargeRem: rem($x-large);
+
+$breakpoints-up: (
+  medium: $mediumRem,
+  large: $largeRem,
+  x-large: $xLargeRem,
+);
+
+@mixin breakpoint-up($size) {
+  @media (min-width: map-get($breakpoints-up, $size)) {
+    @content;
+  }
+}

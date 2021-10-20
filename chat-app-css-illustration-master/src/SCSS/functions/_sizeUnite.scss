@@ -1,0 +1,6 @@
+@use "../variables/typography" as *;
+
+@function rem($size) {
+  $result: calc($size / $baseFontSize);
+  @return #{$result}rem;
+}

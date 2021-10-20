@@ -1,0 +1,13 @@
+@use "../functions/sizeUnites" as *;
+
+.header {
+  padding-left: rem(26);
+  padding-right: rem(26);
+  &__title {
+    color: var(--white);
+  }
+  &__cta {
+    border: none;
+    background: transparent;
+  }
+}

@@ -1,0 +1,49 @@
+@use "../functions/sizeUnites" as *;
+@use "../Variables/breakpoints" as *;
+@use "../mixins/breakpoints" as *;
+
+.input {
+  width: 100%;
+  padding-left: rem(26);
+  padding-right: rem(26);
+  margin-top: rem(40);
+  position: relative;
+  @include breakpoint-up("medium") {
+    width: rem($medium);
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  &::before {
+    content: "";
+    width: rem(20);
+    height: rem(20);
+    position: absolute;
+    top: 50%;
+    left: rem(46);
+    transform: translateY(-50%);
+    border-radius: 50%;
+    border: 2px solid var(--light-grayish-blue);
+    @include breakpoint-up("medium") {
+      left: rem(20);
+    }
+  }
+  input[type="text"] {
+    width: 100%;
+    padding: rem(14) rem(14) rem(14) rem(52);
+    font-size: rem(12);
+    border: none;
+    border-radius: rem(5);
+    outline: none;
+    background-color: var(--white);
+    color: var(--very-dark-grayish-blue);
+
+    @include breakpoint-up("medium") {
+      font-size: rem(19);
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+}

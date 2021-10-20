@@ -1,0 +1,30 @@
+@use "../functions/sizeUnite" as *;
+@use "../mixins/breakpoints" as *;
+
+.hero__info {
+  font-size: rem(18);
+  text-align: center;
+
+  @include breakpoint-up("large") {
+    text-align: left;
+    padding-left: rem(126);
+  }
+
+  h1 {
+    color: hsl(271, 36%, 24%);
+    margin-bottom: rem(32);
+    margin-top: rem(72);
+  }
+
+  p {
+    padding-left: 9.6%;
+    padding-right: 9.6%;
+    font-size: rem(16);
+    line-height: 2;
+    color: hsl(270, 7%, 64%);
+
+    @include breakpoint-up("large") {
+      padding: 0;
+    }
+  }
+}

@@ -1,0 +1,7 @@
+/* Global Variables */
+@use "./global" as *;
+
+/* Main */
+@use "./components/phone" as *;
+@use "./components/hero" as *;
+@use "./components/info" as *;

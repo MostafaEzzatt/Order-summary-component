@@ -1,0 +1,74 @@
+@use "./functions/sizeUnites" as *;
+@use "./mixins/breakpoints" as *;
+
+body {
+  &.dark {
+    --light-grayish-blue: hsl(234, 39%, 85%);
+    --dark-grayish-blue: hsl(234, 11%, 52%);
+    --very-dark-grayish-blue: hsl(233, 14%, 35%);
+
+    background-color: var(--very-dark-blue);
+
+    &::before {
+      background-image: url("../Images/bg-mobile-dark.jpg");
+      @include breakpoint-up("medium") {
+        background: url("../Images/bg-desktop-dark.jpg") center;
+        background-size: cover;
+      }
+    }
+
+    /* Input Dark Styles */
+    .input {
+      &::before {
+        border-color: var(--very-dark-grayish-blue);
+      }
+      input[type="text"] {
+        background-color: var(--very-dark-grayish-blue-hover);
+        color: var(--white);
+
+        &:focus {
+          outline: none;
+        }
+      }
+    }
+
+    .todo-list {
+      background-color: var(--very-dark-grayish-blue-hover);
+
+      &__item {
+        &:note(:last-child) {
+          border-bottom: rem(1) solid var(--very-dark-grayish-blue);
+        }
+
+        &__content {
+          color: var(--light-grayish-blue-hover);
+        }
+
+        &__status,
+        &__clear-complete {
+          color: var(--dark-grayish-blue);
+        }
+
+        &__clear-complete {
+          &:hover {
+            color: var(--light-grayish-blue-hover) !important;
+          }
+        }
+      }
+
+      &__item.done {
+        .todo-list__item__content {
+          color: var(--dark-grayish-blue);
+        }
+      }
+      &__filter {
+        background: var(--very-dark-grayish-blue-hover);
+        li {
+          &:hover {
+            color: var(--light-grayish-blue-hover);
+          }
+        }
+      }
+    }
+  }
+}

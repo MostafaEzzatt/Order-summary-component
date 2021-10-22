@@ -1,0 +1,12 @@
+@use "../Variables/breakpoints" as *;
+@use "../functions/sizeUnites" as *;
+
+$breakpoints-up: (
+  xLarge: #{$xLarge}px,
+);
+
+@mixin breakpoint-up($size) {
+  @media (min-width: map-get($breakpoints-up, $size)) {
+    @content;
+  }
+}

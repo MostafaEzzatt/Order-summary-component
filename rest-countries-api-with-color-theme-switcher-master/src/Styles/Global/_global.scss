@@ -1,0 +1,91 @@
+@use "../functions/sizeUnites" as *;
+@use "../mixins/breakpoints" as *;
+
+/* Global Styles */
+*,
+*::before,
+*::after,
+h1 {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 600;
+  background: var(--bg);
+}
+
+img {
+  max-width: 100%;
+}
+
+/* Container */
+.container {
+  width: 100%;
+
+  @include breakpoint-up("xLarge") {
+    max-width: rem(1440);
+  }
+}
+
+/* Cursor */
+.pointer {
+  cursor: pointer;
+}
+
+/* Flex */
+
+.flex {
+  display: flex;
+}
+
+.f-ai-c {
+  align-items: center;
+}
+
+.f-jc-c {
+  justify-content: center;
+}
+
+.f-jc-b {
+  justify-content: space-between;
+}
+
+/* Shadow */
+.shadow {
+  box-shadow: 0 4px 4px rgba($color: #000000, $alpha: 0.07);
+}
+
+/* Typography */
+.text-center {
+  text-align: center;
+}
+
+/* BTNS */
+.btn {
+  font-size: rem(16);
+  border-radius: rem(5);
+  padding: rem(14) rem(40);
+  background-color: var(--white);
+  text-decoration: none;
+  color: var(--dark-bg);
+  text-align: center;
+}
+
+.loader {
+  margin: 0 0 2em;
+  height: rem(500);
+  width: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loader svg path,
+.loader svg rect {
+  fill: #ff6700;
+}

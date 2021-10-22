@@ -1,0 +1,25 @@
+@use "../functions/sizeUnites" as *;
+
+.back-btn {
+  margin-top: rem(50);
+  margin-bottom: rem(128);
+  padding-left: rem(20);
+  outline: none;
+
+  a {
+    width: rem(136);
+    font-size: rem(16);
+    border-radius: rem(5);
+    padding: rem(14) rem(40);
+    background-color: var(--white);
+    text-decoration: none;
+    color: var(--dark-bg);
+
+    svg {
+      margin-right: rem(12);
+      width: rem(19);
+      height: auto;
+      vertical-align: middle;
+    }
+  }
+}

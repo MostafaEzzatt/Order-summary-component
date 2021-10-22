@@ -1,0 +1,90 @@
+body.dark {
+  background-color: var(--dark-bg);
+
+  .nav {
+    background: var(--dark-element-bg);
+
+    &__logo,
+    &__theme-mode {
+      color: var(--white);
+
+      svg {
+        fill: var(--white);
+        stroke: var(--white);
+      }
+    }
+  }
+
+  .input {
+    &__country {
+      color: var(width);
+      background: var(--dark-element-bg);
+
+      span {
+        svg {
+          fill: var(--white);
+        }
+      }
+
+      input {
+        color: var(--white);
+
+        &::placeholder {
+          color: var(--bg);
+        }
+      }
+    }
+
+    &-filter {
+      background-color: var(--dark-element-bg);
+      color: var(--white);
+      &__dropdown {
+        &__list {
+          background-color: var(--dark-element-bg);
+          color: var(--white);
+
+          &__item {
+            &:hover {
+              background-color: var(--bg);
+              color: var(--dark-bg);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .country {
+    &__box {
+      background: var(--dark-element-bg);
+      a {
+        color: var(--white);
+      }
+    }
+  }
+
+  .back-btn {
+    a {
+      background-color: var(--dark-element-bg);
+      color: var(--white);
+
+      svg {
+        fill: var(--white);
+      }
+    }
+  }
+
+  .country-info {
+    h3 {
+      color: var(--white);
+    }
+    &__content {
+      color: var(--white);
+    }
+  }
+
+  .btn {
+    background-color: var(--dark-element-bg);
+    color: var(--white);
+  }
+}

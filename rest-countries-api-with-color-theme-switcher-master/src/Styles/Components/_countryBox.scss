@@ -1,0 +1,73 @@
+@use "../functions/sizeUnites" as *;
+@use "../mixins/breakpoints" as *;
+
+.country {
+  margin-top: rem(40);
+  .container {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+
+    @include breakpoint-up("xLarge") {
+      grid-template-columns: repeat(4, 1fr);
+      gap: #{calc((1440 - (329 * 4)) / 3)}px;
+    }
+  }
+
+  &__box {
+    width: rem(329);
+    border-radius: rem(7);
+    overflow: hidden;
+    background-color: var(--white);
+    padding-bottom: rem(57);
+
+    &:not(:last-child) {
+      margin-bottom: rem(52);
+    }
+
+    @include breakpoint-up("xLarge") {
+      &:not(:last-child) {
+        margin-bottom: 0;
+      }
+    }
+
+    a {
+      text-decoration: none;
+      color: var(--dark-bg);
+    }
+
+    &__flag {
+      width: 100%;
+      max-width: 100%;
+      margin-bottom: rem(46);
+
+      img {
+        width: 100%;
+        max-width: 100%;
+      }
+    }
+
+    &__info {
+      padding-left: rem(30);
+      padding-right: rem(30);
+      margin-top: rem(27);
+
+      h3 {
+        font-size: rem(22);
+      }
+
+      ul {
+        margin-top: rem(27);
+        list-style: none;
+        li {
+          &:not(:last-child) {
+            margin-bottom: rem(13);
+          }
+          span {
+            font-weight: bold;
+          }
+        }
+      }
+    }
+  }
+}
